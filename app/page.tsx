@@ -1,8 +1,18 @@
+import Navbar from "@/components/layout/Navbar";
+import { About, Contact, Experiences, Hero, Projects, Skills } from "@/components/sections";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans">
-      <main></main>
-    </div>
+    <>
+      <Navbar />
+      <main className="pt-15">
+        <Hero />
+        <About />
+        <Skills />
+        <Experiences />
+        <Projects />
+        <Contact />
+      </main>
+    </>
   );
 }
