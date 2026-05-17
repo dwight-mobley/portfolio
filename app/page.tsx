@@ -3,7 +3,7 @@ import { About, Contact, Experiences, Hero, Projects, Skills } from "@/component
 export default function Home() {
   return (
     <>
-      <main className="pt-15">
+      <main>
         <Hero />
         <About />
         <Skills />
