@@ -19,7 +19,7 @@ export const skills: SkillCategory[] = [
     label: "Tools & Infrastructure",
     items: [
       { name: "Bootstrap", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-      { name: "TailwindCss", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/tailwing-original.svg" },
+      { name: "TailwindCss", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
       { name: "Docker", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
       { name: "Git", iconUrl: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
     ],
