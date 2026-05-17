@@ -14,7 +14,7 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 bg-zinc-900/90 backdrop-blur-sm text-white">
+    <nav className="fixed top-0 inset-x-0 z-50 bg-zinc-900/90 backdrop-blur-sm text-white print:hidden">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
         <Link href="/" className="font-bold text-lg tracking-tight">
           Dwight Mobley
