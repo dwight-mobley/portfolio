@@ -26,7 +26,7 @@ export function About() {
               <a href="https://linkedin.com/in/dwight-mobley-13825b296" target="_blank" rel="noopener noreferrer" className="text-zinc-600 hover:text-zinc-900 transition-colors">
               <div className="flex gap-3">
                   LinkedIn
-                  <Image src={"./linkedIn.svg"} alt="github" width={25} height={25} />
+                  <Image src={"./linkedin.svg"} alt="github" width={25} height={25} />
                 </div>
               </a>
               |
