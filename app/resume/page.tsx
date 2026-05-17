@@ -1,6 +1,6 @@
 
 import { experience, education } from "@/lib/data/experience";
-import { skills } from "@/lib/data/skills";
+import { SkillCategory, skills } from "@/lib/data/skills";
 import Link from "next/link";
 
 export default function ResumePage() {
@@ -44,7 +44,7 @@ export default function ResumePage() {
 
         <section>
           <h2 className="text-xl font-bold text-zinc-900 border-b pb-2 mb-4">Skills</h2>
-          {skills.map((cat: Cat) => (
+          {skills.map((cat: SkillCategory) => (
             <div key={cat.label} className="mb-3">
               <span className="font-medium text-zinc-700">{cat.label}: </span>
               <span className="text-zinc-600 text-sm">{cat.items.map((s) => s.name).join(", ")}</span>
