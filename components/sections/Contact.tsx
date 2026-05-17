@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import SectionHeading from "../ui/SectionHeading";
 
 export function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
@@ -21,7 +22,7 @@ export function Contact() {
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-12 text-zinc-900">Contact</h2>
+        <SectionHeading >Contact</SectionHeading>
         {status === "sent" ? (
           <p className="text-center text-green-600 font-medium">
             Message sent! I'll get back to you soon.
