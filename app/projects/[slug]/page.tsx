@@ -7,11 +7,7 @@ export function generateStaticParams() {
   return projects.filter((p) => p.caseStudy).map((p) => ({ slug: p.slug }));
 }
 
-export default async function CaseStudyPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = projects.find((p) => p.slug === slug);
   if (!project || !project.caseStudy) notFound();
@@ -21,7 +17,6 @@ export default async function CaseStudyPage({
   return (
     <main className="min-h-screen bg-zinc-50 pt-24 pb-16">
       <div className="max-w-3xl mx-auto px-4 space-y-12">
-
         {/* Back link */}
         <Link href="/#projects" className="text-sm text-amber-600 hover:underline">
           ← Back to Projects
@@ -31,9 +26,7 @@ export default async function CaseStudyPage({
         <div className="space-y-4">
           <h1 className="text-4xl font-extrabold text-zinc-900">{project.title}</h1>
           <p className="text-zinc-500 text-base">{project.description}</p>
-          {project.longDescription && (
-            <p className="text-zinc-700 text-lg leading-relaxed">{project.longDescription}</p>
-          )}
+          {project.longDescription && <p className="text-zinc-700 text-lg leading-relaxed">{project.longDescription}</p>}
           <div className="flex flex-wrap gap-2 pt-2">
             {project.tech.map((t) => (
               <span key={t} className="text-sm bg-zinc-200 text-zinc-700 px-3 py-1 rounded-full">
@@ -46,28 +39,33 @@ export default async function CaseStudyPage({
         {/* Links */}
         <div className="flex gap-4">
           {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 bg-zinc-900 text-white rounded-full text-sm font-medium hover:bg-zinc-700 transition-colors"
-            >
+            <a href={project.github} target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-zinc-900 text-white rounded-full text-sm font-medium hover:bg-zinc-700 transition-colors">
               View on GitHub
             </a>
           )}
           {project.liveLink && (
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 bg-amber-500 text-zinc-900 rounded-full text-sm font-bold hover:bg-amber-400 transition-colors"
-            >
+            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-amber-500 text-zinc-900 rounded-full text-sm font-bold hover:bg-amber-400 transition-colors">
               Live Site
             </a>
           )}
         </div>
 
         <hr className="border-zinc-200" />
+        {/* Videos */}
+        {project.videos && (
+          <>
+            <div className="flex gap-4">
+              {project.videos.map((v, i)=>(
+                <div key={v}>
+                  <video src={v} width={600} height={300} controls preload="auto">
+                    <source src={v} type="video/mp4"/>
+                    </video>
+                </div>
+              ))}
+            </div>
+            <hr className="border-zinc-200" />
+          </>
+        )}
 
         {/* Problem */}
         <Section title="The Problem">
@@ -82,9 +80,7 @@ export default async function CaseStudyPage({
         {/* Architecture */}
         {caseStudy.architecture && (
           <Section title="Architecture">
-            <p className="text-zinc-600 leading-relaxed whitespace-pre-line">
-              {caseStudy.architecture}
-            </p>
+            <p className="text-zinc-600 leading-relaxed whitespace-pre-line">{caseStudy.architecture}</p>
           </Section>
         )}
 
@@ -103,18 +99,14 @@ export default async function CaseStudyPage({
         {/* Technical Decisions */}
         {caseStudy.technicalDecisions && (
           <Section title="Technical Decisions">
-            <p className="text-zinc-600 leading-relaxed whitespace-pre-line">
-              {caseStudy.technicalDecisions}
-            </p>
+            <p className="text-zinc-600 leading-relaxed whitespace-pre-line">{caseStudy.technicalDecisions}</p>
           </Section>
         )}
 
         {/* Challenges */}
         {caseStudy.challenges && (
           <Section title="Challenges & Solutions">
-            <p className="text-zinc-600 leading-relaxed whitespace-pre-line">
-              {caseStudy.challenges}
-            </p>
+            <p className="text-zinc-600 leading-relaxed whitespace-pre-line">{caseStudy.challenges}</p>
           </Section>
         )}
 
@@ -126,31 +118,19 @@ export default async function CaseStudyPage({
         {/* Improvements */}
         {caseStudy.improvements && (
           <Section title="What I'd Do Differently">
-            <p className="text-zinc-600 leading-relaxed whitespace-pre-line">
-              {caseStudy.improvements}
-            </p>
+            <p className="text-zinc-600 leading-relaxed whitespace-pre-line">{caseStudy.improvements}</p>
           </Section>
         )}
 
         {/* Bottom links */}
         <div className="flex gap-4 pt-4 border-t border-zinc-200">
           {project.github && (
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 bg-zinc-900 text-white rounded-full text-sm font-medium hover:bg-zinc-700 transition-colors"
-            >
+            <a href={project.github} target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-zinc-900 text-white rounded-full text-sm font-medium hover:bg-zinc-700 transition-colors">
               View on GitHub
             </a>
           )}
           {project.liveLink && (
-            <a
-              href={project.liveLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2 bg-amber-500 text-zinc-900 rounded-full text-sm font-bold hover:bg-amber-400 transition-colors"
-            >
+            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-amber-500 text-zinc-900 rounded-full text-sm font-bold hover:bg-amber-400 transition-colors">
               Live Site
             </a>
           )}
@@ -160,16 +140,10 @@ export default async function CaseStudyPage({
   );
 }
 
-function Section({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
+function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="space-y-3">
-      <SectionHeading >{title}</SectionHeading>
+      <SectionHeading>{title}</SectionHeading>
       {children}
     </section>
   );
