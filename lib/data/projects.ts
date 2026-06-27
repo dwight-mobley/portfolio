@@ -71,6 +71,7 @@ export const projects: Project[] = [
     github: "https://github.com/dwight-mobley/vet-trax",
     featured: true,
     inDevelopment: true,
+    liveLink:'https://vet-trax.vercel.app/',
     caseStudy: {
       problem: "Managing a pet's health often involves scattered notes, calendars, and manual tracking to remember upcoming vet appointments and daily or monthly medication schedules, leading to missed doses or delayed checkups.",
       solution: "Developed a centralized dashboard that consolidates pet profiles and medical records with an automated notification pipeline. The system actively monitors due dates and dispatches reminders to the user, completely automating the schedule-tracking aspect of pet care.",
@@ -91,6 +92,42 @@ export const projects: Project[] = [
       outcome: "Delivered a streamlined, all-in-one management tool that simplifies pet health tracking. The automated notification system reliably alerts users about critical medication and appointment due dates, ensuring pets stay on track with their care plans.",
       improvements:
         "Future enhancements could include implementing SMS text notifications alongside the current email alerts, integrating external veterinary clinic APIs to auto-sync official medical records, and adding multi-user support to allow family members to share access to a pet's profile.",
+    },
+  },
+  {
+    slug: "ddcattle",
+    title: "DDCattle",
+    description: "A modern ranch management platform built with Ruby on Rails, Inertia.js, React, Neon Postgres, Cloudflare R2, Pagy, and React Toastify.",
+    longDescription:
+      "DDCattle is a comprehensive ranch management platform that combines a robust Rails backend with a modern React frontend via Inertia.js. The platform leverages Neon Postgres for reliable data storage, Cloudflare R2 for scalable file and media management, includes features for efficient pagination with Pagy, and delivers smooth user notifications with React Toastify.",
+    tech: ["Ruby on Rails", "Inertia.js", "React", "Neon Postgres", "Cloudflare R2", "Pagy", "React Toastify"],
+    github: "https://github.com/dwight-mobley/ddcattle",
+    featured: true,
+    inDevelopment: true,
+    liveLink: 'https://ddcattle.onrender.com/',
+    caseStudy: {
+      problem:
+        "Modern ranches require efficient management tools to track livestock and horses. Traditional spreadsheets and paper-based systems lack scalability and the ability to handle rich media like photos of animals.",
+      solution:
+        "Developed a full-stack ranch management platform combining Rails' solid backend architecture with a modern React frontend connected via Inertia.js. The platform provides real-time data synchronization, file management for livestock media, and intuitive user interfaces for managing animals.",
+      architecture:
+        "Built with Ruby on Rails as the API layer providing RESTful endpoints, connected to a React frontend through Inertia.js which eliminates the need for a separate API layer while maintaining modern frontend patterns. The database is hosted on Neon Postgres providing a reliable, serverless PostgreSQL service. File uploads are handled through Cloudflare R2 for cost-effective, scalable object storage. The frontend uses React for interactive components and is styled with a modern design system. Backend pagination is handled via Pagy gem for efficient data loading, and React Toastify provides toast notifications for user feedback.",
+      features: [
+        "Ranch management dashboard and operations tracking",
+        "Livestock profile management with photo upload via Cloudflare R2",
+        "Efficient data pagination using Pagy for large datasets",
+        "Toast notifications for user feedback and alerts via React Toastify",
+        "Seamless client-server integration through Inertia.js",
+        "Responsive React UI components for desktop and mobile access",
+      ],
+      technicalDecisions:
+        "Chose Ruby on Rails for the backend to leverage its mature ecosystem and convention-over-configuration approach, enabling rapid development of complex business logic. Selected Inertia.js to bridge Rails and React without building a separate REST API, reducing maintenance overhead and keeping the codebase focused. Neon Postgres was chosen for its serverless architecture and developer-friendly features. Cloudflare R2 provides cost-effective file storage without expensive egress fees. Pagy was selected over Kaminari for its lightweight, efficient pagination approach. React Toastify handles notifications elegantly without bloating the bundle.",
+      challenges:
+        "Integrating Inertia.js with Rails required careful setup to ensure proper request handling and component state management. Managing file uploads to Cloudflare R2 required proper credential handling and integration with Rails' file upload mechanisms. Building responsive React components that work seamlessly with server-rendered props demanded attention to data synchronization and component lifecycle.",
+      outcome:
+        "Delivered a production-ready platform that streamlines ranch operations with modern tooling, enabling ranch managers to make informed decisions with current data and rich media context.",
+      improvements:
+        "Add real-time collaboration features using WebSockets for multi-user simultaneous editing. Implement GPS tracking integration for livestock management and herd monitoring. Enhance reporting capabilities with analytics and data export features. Consider mobile app development using React Native to share business logic with the web platform.",
     },
   },
 ];

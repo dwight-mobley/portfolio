@@ -1,3 +1,4 @@
+'use client'
 import { experience, education, resumeProjects, certifications } from "@/lib/data/experience";
 import { SkillCategory, skills } from "@/lib/data/skills";
 import Link from "next/link";
@@ -6,13 +7,23 @@ export default function ResumePage() {
   return (
     <div className="min-h-screen bg-white pt-24 pb-16 print:pt-0 print:pb-0">
       <div className="max-w-3xl mx-auto px-4 space-y-10 print:space-y-6">
-        <Link href="/" className="text-sm text-amber-600 hover:underline print:hidden">← Back</Link>
+        <div className="flex justify-between items-center print:hidden">
+          <Link href="/" className="text-sm text-amber-600 hover:underline print:hidden">← Back</Link>
+           <button
+            onClick={() => window.print()}
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-zinc-900 rounded-md hover:bg-zinc-800 transition-colors shadow-sm"
+          >
+            Print Resume
+          </button>
+        </div>
+
 
         {/* Header */}
         <div>
           <h1 className="text-4xl font-extrabold text-zinc-900">Dwight Mobley</h1>
           <p className="text-zinc-500">Full-Stack Developer · Gainesville, GA</p>
-          <p className="text-zinc-500">
+          <p className="hidden print:block text-sm">(470) 768-2068</p>
+          <p className="text-zinc-500 print:text-xs">
             dwightscode@gmail.com ·{" "}
             <a href="https://github.com/dwight-mobley" className="hover:underline print:no-underline">github.com/dwight-mobley</a>
             {" "}·{" "}
